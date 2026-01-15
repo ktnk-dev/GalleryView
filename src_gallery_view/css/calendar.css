@@ -1,0 +1,66 @@
+.calendar > h1 {
+    margin-top: 30px;
+    font-weight: 100;
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+.calendar  * {
+    transition: var(--t) ease;
+}
+.calendar *.transparent {
+    transform: translateY(-7px);
+}
+
+.calendar > .months {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--p);
+}
+.calendar > .months > .month {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.calendar > .months > .month > h2 {
+    margin: 0;
+    font-weight: normal;
+    color: #999;
+}
+.calendar > .months > .month > .weeks {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    gap: 4px;
+}
+.calendar > .months > .month > .weeks > div {
+    height: 40px;
+    width: 40px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} .calendar > .months > .month > .weeks > div > span {
+    text-shadow: #000 0 0 4px;
+    font-weight: bold;
+    z-index: 2;
+    font-size: 13px;
+}
+
+.calendar > .months > .month > .weeks > div.clickable {
+    /* border: solid 2px var(--bg); */
+    cursor: pointer;
+}.calendar > .months > .month > .weeks > div.clickable:hover {
+    transform: scale(1.5);
+    z-index: 10;
+    box-shadow: rgba(0,0,0,.5) 0px 0px 20px 10px;
+}.calendar > .months > .month > .weeks > div.clickable:active {
+    transform: scale(1.34);
+}
+
+@media (max-width: 590px) {
+    .calendar > .months > .month > .weeks > div {
+        --hw: calc(calc(100vw - var(--p) - var(--p) - 30px) / 7);
+        height: var(--hw);
+        width: var(--hw);
+    }
+}

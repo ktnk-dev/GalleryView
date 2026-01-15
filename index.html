@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GalleryView</title>
+        <link rel="stylesheet" href="./src_gallery_view/css/main.css">
+        <link rel="stylesheet" href="./src_gallery_view/css/calendar.css">
+        <link rel="stylesheet" href="./src_gallery_view/css/day.css">
+        <link rel="stylesheet" href="./src_gallery_view/css/preview.css">
+
+    </head>
+
+    <body>
+        <app></app>
+        <script src="./config.js"></script>
+        <script src="./result.js"></script>
+        <script>
+            const errormessage = 'Messages are not converted';
+            try {
+                if (messages === undefined) {
+                    alert(errormessage);
+                }
+            } catch (ReferenceError) {
+                alert(errormessage);
+            }
+        </script>
+        <script src="./src_gallery_view/js/loader.js"></script>
+
+        <script src="./src_gallery_view/js/lib.js"></script>
+        <script src="./src_gallery_view/js/components.js"></script>
+        <script src="./src_gallery_view/js/calendar.js"></script>
+        <script src="./src_gallery_view/js/day.js"></script>
+        <script src="./src_gallery_view/js/preview.js"></script>
+        <script src="./src_gallery_view/js/background.js"></script>
+        <script>
+            void (async function _() {
+                await data.init().then(_ => {
+                    calendar.init()
+                    !NO_BACKGROUND? background.init(): null
+                })
+            })()
+        </script>
+    </body>
+</html>

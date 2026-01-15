@@ -1,0 +1,87 @@
+
+#preview {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--t);
+    background: rgba(0,0,0,.5);
+    backdrop-filter: var(--blur15);
+}
+#preview.transparent {
+    opacity: 0;
+}
+#preview > .content {
+    transition: var(--t);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#preview > .content.transparent {
+    transform: scale(.9);    
+}
+#preview > .content > img {
+    max-width: 90vw;
+    max-height: 80dvh;
+    border-radius: 20px;
+    box-shadow: rgba(0,0,0,.5) 0 0 35px 15px;
+}
+#preview.no_blur > .content > img {
+    border: solid 2px #bbb;
+}
+
+#preview > .content > .meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+#preview > .content > .meta > .info {
+    display: flex;
+    gap: 4px;
+    height: min-content;
+}
+#preview > .content > .meta > .info > * {
+    background: rgba(255,255,255,.07);
+    padding: 5px 15px 3px;
+    border-radius: 10px;
+    border: solid 1px rgba(255,255,255,.07);
+}
+#preview.no_blur > .content > .meta > .info > * {
+    background: #222;
+    border: solid 1px #444;
+    transition: var(--t);
+}
+
+#preview > .content > .meta > .info > *:first-child {
+    border-radius: 20px 10px 10px 20px;
+    padding-right: 12px;
+}
+#preview > .content > .meta > .info > *:last-child {
+    border-radius: 10px 20px 20px 10px;
+    padding-left: 12px;
+
+}
+#preview > .content > .meta > .buttons > *:hover {
+    background: #444;
+    cursor: pointer;
+} #preview > .content > .meta > .buttons > *:active {
+    transform: scale(.9);
+}
+
+
+#preview > .content svg {
+    height: 20px !important;
+    width: 20px !important;
+    transform: translateY(1px);
+}
+
+.bi-telegram {
+    filter: invert(100%);
+    transform: translateY(2px) !important;
+}
