@@ -25,13 +25,19 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    background: #000;
+    background: #111;
     color: #fff;
     font-family: "M PLUS Rounded 1c", Arial, Helvetica, sans-serif;
     transition: background 9.56s linear;
     /* background-size: 500%; */
     background-position: 50% 50%;
     /* animation: bodybg infinite 27s ease; */
+}
+
+.transparent {
+    opacity: 0 !important;
+} .no_blur {
+    backdrop-filter: none !important;
 }
 
 app {
@@ -43,16 +49,8 @@ app {
     overflow-y: auto;
     background: rgba(0,0,0,.8);
     backdrop-filter: blur(200px);
-}
-.transparent {
-    opacity: 0;
-}
-
-.no_blur {
-    backdrop-filter: none !important;
-}
-app.no_bg {
-    background: #111
+} app.no_bg {
+    background: transparent
 }
 
 .tabs_object {
@@ -60,24 +58,25 @@ app.no_bg {
     display: flex;
     background: rgba(255,255,255,.1);
     border-radius: 999px;
+    
+    .tab_object {
+        padding: 5px 14px;
+        cursor: pointer;
+        border-radius: 999px;
+        transition: var(--t);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    } .tab_object:hover {
+        background: var(255,255,255,.1);
+    } .tab_object:active {
+        transform: scale(.9);
+    } .tab_object.active {
+        background: rgba(255,255,255,.2);
+    } 
 }
-.tab_object {
-    padding: 5px 14px;
-    cursor: pointer;
-    border-radius: 999px;
-    transition: var(--t);
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-} .tab_object:hover {
-    background: var(255,255,255,.1);
-} .tab_object:active {
-    transform: scale(.9);
-} .tab_object.active {
-    background: rgba(255,255,255,.2);
-} 
 
 header.transparent {
     transform: translateY(-20px);
@@ -95,29 +94,35 @@ header {
     width: 100vw;
     transition: var(--t) ease;
     background: linear-gradient(to bottom, rgba(0,0,0,.4), transparent);
-} header > img {
-    border-radius: 999px;
-    height: 40px;
 
-} header > span {
-    font-size: 22px;
-    font-weight: 500;
-} header > .count {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-left: 5px;
-    margin-top: 2px;
-    background: rgb(35, 35, 35);
-    color: #bbb;
-    padding: 4px 10px 3px;
-    font-size: 14px;
-    border-radius: 999px;
-} header > .count > svg {
-    height: 18px;
-    width: 18px;
-    fill: #bbb !important;
-}
+    img {
+        border-radius: 999px;
+        height: 40px;
+    }
+    span {
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .count {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-left: 5px;
+        margin-top: 2px;
+        background: rgb(35, 35, 35);
+        color: #bbb;
+        padding: 4px 10px 3px;
+        font-size: 14px;
+        border-radius: 999px;
+
+        svg {
+            height: 18px;
+            width: 18px;
+            fill: #bbb !important;
+        }
+    }
+} 
 
 @media (max-width: 590px) {
     header > .count {
