@@ -3,7 +3,7 @@
     top: 0;
     right: 0;
     z-index: 15;
-    width: 550px;
+    width: 560px;
     display: flex;
     flex-direction: column;
     background: rgba(0,0,0,.3);
@@ -114,7 +114,7 @@
     }
 }
 
-@media (max-width: 590px) {
+@media (max-width: 600px) {
     #day {
         width: calc(100vw - 40px) !important;
         border: 0;

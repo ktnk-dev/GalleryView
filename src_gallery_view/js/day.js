@@ -12,7 +12,7 @@ const day = {
      */
     open:async (msgs) => {
         await day.close()
-        select('body').append($.div(
+        Body.append($.div(
             {id: 'day', class: 'transparent'},
             $.div(
                 {class: 'head'},

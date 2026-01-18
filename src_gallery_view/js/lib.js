@@ -224,3 +224,4 @@ class WrappedElement {
 }
 
 const App = select('app')
+const Body = select('body')

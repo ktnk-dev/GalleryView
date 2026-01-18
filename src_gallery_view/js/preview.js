@@ -9,7 +9,7 @@ const preview = {
      * @param {Message} message
      */
     open:async (message) => {
-        select('body').append(
+        Body.append(
             $.div(
                 {id: 'preview', class: `transparent ${NO_BLUR? 'no_blur': ''}`, onclick: preview.close},
                 $.div(

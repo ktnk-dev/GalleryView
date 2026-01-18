@@ -33,7 +33,7 @@ const calendar = {
         App.clear()
         await sleep(.5)
         App.classes('calendar', NO_BACKGROUND? 'no_bg': '', NO_BLUR? 'no_blur': '')
-        select('body').append(
+        Body.append(
             $.header(
                 {class: 'transparent'},
                 data.channel.photo? $.img({src: data.channel.photo}) :null,
