@@ -2,11 +2,12 @@ const calendar = {
     render_month:async (month, monthNumber, year) => {
         if (Object.keys(month).length == 0) return
         const fd = new Date(year, monthNumber, 1)
-        const ld = new Date(year, monthNumber, 0)
-        const monthName = fd.toLocaleDateString(userLocale, { month: 'long' })
+        const ld = new Date(year, monthNumber+1, 0)
+        const monthName = ld.toLocaleDateString(userLocale, { month: 'long' })
 
         var out = []
-        for (let i = 0; i < fd.getDay()-1; i++) {
+        const actual_fd = fd.getDay()-1 == -1 ? 6 : fd.getDay()-1
+        for (let i = 0; i < actual_fd; i++) {
             out.push(undefined)
         }
         
@@ -20,7 +21,9 @@ const calendar = {
                 out.push(undefined)
             }
         }
-        //console.log(out)
+        // console.log('---', monthName, '---')
+        // console.log(fd, fd.getDay()-1, '\n', ld.getDate(), ld)
+        // console.log(out)
         
         selectAll('.months').at(-1).append(
             Calendar(
