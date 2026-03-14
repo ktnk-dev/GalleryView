@@ -71,7 +71,7 @@ const Calendar = (
                 style: 
                     e !== undefined?
                         e.length > 0? 
-                        `background: url(${e[0].photo}); background-size: contain;`: 
+                        `background: url(${e[0].photo}); background-size: cover;`: 
                         `background: rgba(255,255,255,.15); scale: .4`:
                     `background: rgba(255,255,255,.07); scale: .2`
             }, exist? $.span(e[0].datetime.getDate()): null)
